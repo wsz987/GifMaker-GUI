@@ -1,18 +1,44 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<v-tabs-items :value="actionTab">
+    <v-tab-item>
+        <Maker />
+    </v-tab-item>
+    <v-tab-item>
+        <ConfigManage/>
+    </v-tab-item>
+    <v-tab-item>
+        <FolderManage />
+    </v-tab-item>
+</v-tabs-items>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import {
+    mapGetters,
+} from 'vuex'
+import config from '@/config'
+import Maker from './Tabs/Maker'
+import ConfigManage from './Tabs/ConfigManage.vue'
+import FolderManage from './Tabs/FolderManage.vue'
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
+    name: 'Home',
+    data() {
+        return {
+            tabList: config.tabs
+        }
+    },
+    components: {
+        Maker,
+        ConfigManage,
+        FolderManage
+    },
+    computed: {
+        ...mapGetters('api', ['actionTab'])
+    },
 }
 </script>
+<style lang="scss">
+.v-tabs-items{
+    height: 100%;
+}
+</style>
