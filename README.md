@@ -1,19 +1,10 @@
-# gif-maker-ui
+# gif-maker-Gui
 
-## Project setup
-```
-npm install
-```
+此库为 Gif制作器的GUI界面 制作器测试后上传
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### 演示
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
+![](https://github.com/wsz987/GifMaker-GUI/blob/main/src/assets/example.gif?raw=true)
+
